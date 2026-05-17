@@ -8,12 +8,15 @@ export default function App() {
 
         <div className="flex flex-1 justify-center gap-12 text-sm font-medium">
           <a href="#">Explore</a>
+          <a href="#">Map</a>
+          <a href="#">Feed</a>
           <a href="#">Parks</a>
           <a href="#">Saved</a>
-          <a href="#">Profile</a>
         </div>
 
-        <div className="w-48" />
+        <div className="flex w-48 justify-end text-sm font-medium">
+          <a href="#">Profile</a>
+        </div>
       </nav>
 
       <main className="h-[calc(100vh-4rem)] w-full">
