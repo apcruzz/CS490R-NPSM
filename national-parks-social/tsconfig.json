@@ -16,10 +16,6 @@
   },
   "include": [
     "src",
-    "components",
-    "lib",
-    "**/*.ts",
-    "**/*.tsx",
     "**/*.mts"
   ],
   "exclude": ["node_modules", "dist", ".next"]

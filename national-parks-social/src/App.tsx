@@ -1,4 +1,4 @@
-import USMap from "../components/USMap";
+import USMap from "./components/USMap";
 
 export default function App() {
   return (
