@@ -1,12 +1,10 @@
-import AppLayout from "./layouts/Applayout";
-import USMap from "./components/USMap";
+import AppLayout from "./layouts/AppLayout";
+import Maps from "./pages/maps/Maps";
 
 export default function App() {
   return (
     <AppLayout>
-      <main className="h-[calc(100vh-4rem)] w-full">
-        <USMap />
-      </main>
+      <Maps />
     </AppLayout>
   );
 }
