@@ -1,5 +1,36 @@
 import { useMemo, useState } from "react";
+import type { Park } from "../../lib/parks";
 import { nationalParks } from "../../lib/parks";
+
+const categoryKeywords: Array<[string, string[]]> = [
+  ["Canyon", ["Canyon", "Gorge", "Badlands"]],
+  ["Desert", ["Arches", "Joshua Tree", "Death Valley", "Saguaro", "White Sands", "Petrified Forest"]],
+  ["Mountain", ["Denali", "Rainier", "Rocky", "Grand Teton", "Glacier", "Great Basin", "Guadalupe"]],
+  ["Volcanic", ["Hawaii Volcanoes", "Haleakala", "Lassen", "Crater Lake"]],
+  ["Cave", ["Caverns", "Mammoth Cave", "Wind Cave"]],
+  ["Coastal", ["Acadia", "Channel Islands", "Biscayne", "Dry Tortugas", "Everglades", "Virgin Islands"]],
+  ["Forest", ["Redwood", "Sequoia", "Kings Canyon", "Olympic", "Congaree", "Cuyahoga"]],
+  ["Waterway", ["Voyageurs", "Isle Royale", "Kenai Fjords", "Glacier Bay", "Lake Clark"]],
+  ["Historic", ["Gateway Arch", "Hot Springs", "Mesa Verde"]],
+];
+
+function getParkCategory(park: Park) {
+  const match = categoryKeywords.find(([, keywords]) =>
+    keywords.some((keyword) => park.name.includes(keyword))
+  );
+
+  return match?.[0] ?? "Wilderness";
+}
+
+function getParkDescription(park: Park, category: string) {
+  return `${park.name} is a ${category.toLowerCase()} national park in ${park.state}.`;
+}
+
+// function getParkImageUrl(park: Park) {
+//   const imageQuery = encodeURIComponent(`${park.name} national park landscape`);
+
+//   return `https://source.unsplash.com/640x420/?${imageQuery}`;
+// }
 
 export default function Explore() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -14,7 +45,8 @@ export default function Explore() {
     return nationalParks.filter((park) => {
       return (
         park.name.toLowerCase().includes(query) ||
-        park.state.toLowerCase().includes(query)
+        park.state.toLowerCase().includes(query) ||
+        getParkCategory(park).toLowerCase().includes(query)
       );
     });
   }, [searchTerm]);
@@ -42,17 +74,45 @@ export default function Explore() {
           <span className="text-zinc-500">National Parks</span>
         </div>
 
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {filteredParks.map((park) => (
-            <button
-              key={park.name}
-              type="button"
-              className="rounded-md border border-zinc-200 bg-white p-4 text-left transition hover:border-emerald-700 hover:bg-emerald-50"
-            >
-              <div className="text-sm font-semibold">{park.name}</div>
-              <div className="mt-1 text-xs text-zinc-500">{park.state}</div>
-            </button>
-          ))}
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {filteredParks.map((park) => {
+            const category = getParkCategory(park);
+
+            return (
+              <button
+                key={park.name}
+                type="button"
+                className="overflow-hidden rounded-md border border-zinc-200 bg-white text-left transition hover:border-emerald-700 hover:shadow-sm"
+              >
+                {/* <img
+                  src={getParkImageUrl(park)}
+                  alt={`${park.name} National Park`}
+                  className="h-36 w-full object-cover"
+                  loading="lazy"
+                /> */}
+
+                <img src={park.image} alt={`${park.name} National Park`} />
+
+                <div className="space-y-3 p-4">
+                  <div className="flex items-center justify-between gap-3">
+                    <span className="rounded bg-emerald-50 px-2 py-1 text-xs font-medium text-emerald-800">
+                      {category}
+                    </span>
+                    <span className="text-xs font-medium text-zinc-500">
+                      {park.state}
+                    </span>
+                  </div>
+
+                  <div>
+                    <h3 className="text-sm font-semibold">{park.name}</h3>
+                    <p className="mt-1 text-sm leading-5 text-zinc-600">
+                      {getParkDescription(park, category)}
+                    </p>
+                  </div>
+                </div>
+              </button>
+            );
+          })}
         </div>
       </section>
     </main>
