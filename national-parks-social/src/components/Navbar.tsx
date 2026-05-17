@@ -18,11 +18,11 @@ export default function Navbar() {
         <NavLink to="/feed" className={navLinkClass}>
           Feed
         </NavLink>
+        <NavLink to="/plan" className={navLinkClass}>
+          Plan
+        </NavLink>
         <NavLink to="/saved" className={navLinkClass}>
           Saved
-        </NavLink>
-        <NavLink to="/profile" className={navLinkClass}>
-          Profile
         </NavLink>
       </div>
 

@@ -5,6 +5,7 @@ import Feed from "./pages/feed/Feed";
 import Maps from "./pages/maps/Maps";
 import Profile from "./pages/profile/Profile";
 import Saved from "./pages/saved/Saved";
+import Plan from "./pages/plan/Plan";
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
           <Route path="maps" element={<Maps />} />
           <Route path="explore" element={<Explore />} />
           <Route path="feed" element={<Feed />} />
+          <Route path="plan" element={<Plan />} />
           <Route path="saved" element={<Saved />} />
           <Route path="profile" element={<Profile />} />
         </Routes>
