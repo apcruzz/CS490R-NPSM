@@ -87,7 +87,7 @@ export default function Explore() {
                 {/* <img
                   src={getParkImageUrl(park)}
                   alt={`${park.name} National Park`}
-                  className="h-36 w-full object-cover"
+                  className="aspect-[4/3] w-full object-cover"
                   loading="lazy"
                 /> */}
 

@@ -5,7 +5,7 @@
     "position": [
       44.216629,
       -68.345268
-    ]
+    ], "image": "public/images/acadia.png"
   },
   {
     "name": "Arches",
@@ -13,7 +13,7 @@
     "position": [
       38.725055,
       -109.595467
-    ]
+    ], "image": "public/images/arches.png"
   },
   {
     "name": "Badlands",
@@ -21,7 +21,7 @@
     "position": [
       43.699522,
       -102.393955
-    ]
+    ], "image": "public/images/badland.jpg"
   },
   {
     "name": "Big Bend",
@@ -29,7 +29,7 @@
     "position": [
       29.333194,
       -103.310728
-    ]
+    ], "image": "public/images/bigbend.png"
   },
   {
     "name": "Biscayne",
@@ -37,7 +37,7 @@
     "position": [
       25.481276,
       -80.218304
-    ]
+    ], "image": "public/images/biscayne.jpg"
   },
   {
     "name": "Black Canyon of the Gunnison",
@@ -45,7 +45,7 @@
     "position": [
       38.57214,
       -107.723916
-    ]
+    ], "image": "public/images/blackcanyon.jpg"  
   },
   {
     "name": "Bryce Canyon",
@@ -53,7 +53,7 @@
     "position": [
       37.57069,
       -112.178679
-    ], "image": "public/images/bryce-canyon.jpg"
+    ], "image": "public/images/bryce.png"
   },
   {
     "name": "Canyonlands",
@@ -61,7 +61,7 @@
     "position": [
       38.233999,
       -109.949595
-    ]
+    ], "image": "public/images/badlands.png"
   },
   {
     "name": "Capitol Reef",
@@ -69,7 +69,7 @@
     "position": [
       38.066514,
       -111.142734
-    ]
+    ], "image": "public/images/capitolreef.png"
   },
   {
     "name": "Carlsbad Caverns",
@@ -77,7 +77,7 @@
     "position": [
       32.120039,
       -104.527775
-    ]
+    ], "image": "public/images/carlsbad.png"
   },
   {
     "name": "Channel Islands",
@@ -85,7 +85,7 @@
     "position": [
       33.848661,
       -119.74032
-    ]
+    ], "image": "public/images/channelislands.png"
   },
   {
     "name": "Congaree",
@@ -93,7 +93,7 @@
     "position": [
       33.794047,
       -80.735119
-    ]
+    ], "image": "public/images/congaree.png"
   },
   {
     "name": "Crater Lake",
@@ -101,7 +101,7 @@
     "position": [
       42.709644,
       -122.424511
-    ]
+    ], "image": "public/images/craterlake.png"
   },
   {
     "name": "Cuyahoga Valley",
@@ -109,7 +109,7 @@
     "position": [
       41.25511,
       -81.569692
-    ]
+    ], "image": "public/images/cuyahoga.png"
   },
   {
     "name": "Death Valley",
@@ -117,7 +117,7 @@
     "position": [
       36.470232,
       -117.138803
-    ]
+    ], "image": "public/images/deathvalley.png"
   },
   {
     "name": "Denali",
@@ -125,7 +125,7 @@
     "position": [
       63.231647,
       -150.602967
-    ]
+    ], "image": "public/images/denali.png"
   },
   {
     "name": "Dry Tortugas",
@@ -133,7 +133,7 @@
     "position": [
       24.645728,
       -82.361704
-    ]
+    ], "image": "public/images/drytortugas.png"
   },
   {
     "name": "Everglades",
@@ -141,7 +141,7 @@
     "position": [
       25.374575,
       -80.954659
-    ]
+    ], "image": "public/images/everglades.png"
   },
   {
     "name": "Gates of the Arctic",
@@ -149,7 +149,7 @@
     "position": [
       67.837416,
       -153.386932
-    ]
+    ], "image": "public/images/gatesofthearctic.png"
   },
   {
     "name": "Gateway Arch",
@@ -157,7 +157,7 @@
     "position": [
       38.62317,
       -90.180683
-    ]
+    ], "image": "public/images/gatewayarch.png"
   },
   {
     "name": "Glacier",
@@ -165,7 +165,7 @@
     "position": [
       48.617398,
       -113.858424
-    ]
+    ], "image": "public/images/glacier.png"
   },
   {
     "name": "Glacier Bay",
@@ -173,7 +173,7 @@
     "position": [
       58.821087,
       -136.865428
-    ]
+    ], "image": "public/images/glacierbay.png"
   },
   {
     "name": "Grand Canyon",
@@ -181,7 +181,7 @@
     "position": [
       36.307889,
       -112.783479
-    ]
+    ], "image": "public/images/grandcanyon.png"
   },
   {
     "name": "Grand Teton",
@@ -189,7 +189,7 @@
     "position": [
       43.810971,
       -110.685587
-    ]
+    ], "image": "public/images/grandteton.png"
   },
   {
     "name": "Great Basin",
@@ -197,7 +197,7 @@
     "position": [
       38.941593,
       -114.244268
-    ]
+    ], "image": "public/images/greatbasin.png"
   },
   {
     "name": "Great Sand Dunes",
@@ -205,7 +205,7 @@
     "position": [
       37.79446,
       -105.613013
-    ]
+    ], "image": "public/images/greatsanddunes.png"
   },
   {
     "name": "Great Smoky Mountains",
@@ -213,7 +213,7 @@
     "position": [
       35.635153,
       -83.505968
-    ]
+    ], "image": "public/images/greatsmokymountains.png"
   },
   {
     "name": "Guadalupe Mountains",
@@ -221,7 +221,7 @@
     "position": [
       31.90681,
       -104.868278
-    ]
+    ], "image": "public/images/guadalupemountains.png"    
   },
   {
     "name": "Haleakala",
@@ -229,7 +229,7 @@
     "position": [
       20.699418,
       -156.148603
-    ]
+    ], "image": "public/images/haleakala.png"
   },
   {
     "name": "Hawaii Volcanoes",
@@ -237,7 +237,7 @@
     "position": [
       19.260804,
       -155.415649
-    ]
+    ], "image": "public/images/hawaiivolcanoes.png"
   },
   {
     "name": "Hot Springs",
@@ -245,7 +245,7 @@
     "position": [
       34.529165,
       -93.065905
-    ]
+    ], "image": "public/images/hotsprings.png"
   },
   {
     "name": "Indiana Dunes",
@@ -253,7 +253,7 @@
     "position": [
       41.612371,
       -87.149112
-    ]
+    ], "image": "public/images/indianadunes.png"
   },
   {
     "name": "Isle Royale",
@@ -261,7 +261,7 @@
     "position": [
       47.712108,
       -88.794858
-    ]
+    ], "image": "public/images/isleroyale.png"
   },
   {
     "name": "Joshua Tree",
@@ -269,7 +269,7 @@
     "position": [
       33.899774,
       -115.860134
-    ]
+    ], "image": "public/images/joshuatree.png"
   },
   {
     "name": "Katmai",
@@ -277,7 +277,7 @@
     "position": [
       58.504775,
       -154.889462
-    ]
+    ], "image": "public/images/katmai.png"
   },
   {
     "name": "Kenai Fjords",
@@ -285,7 +285,7 @@
     "position": [
       59.796514,
       -150.246592
-    ]
+    ], "image": "public/images/kenaifjords.png"
   },
   {
     "name": "Kings Canyon",
@@ -293,7 +293,7 @@
     "position": [
       36.915268,
       -118.65856
-    ]
+    ], "image": "public/images/kingscanyon.png"
   },
   {
     "name": "Kobuk Valley",
@@ -301,7 +301,7 @@
     "position": [
       67.391355,
       -159.063112
-    ]
+    ], "image": "public/images/kobukvalley.png"
   },
   {
     "name": "Lake Clark",
@@ -309,7 +309,7 @@
     "position": [
       60.682342,
       -153.261871
-    ]
+    ], "image": "public/images/lakeclark.png"
   },
   {
     "name": "Lassen Volcanic",
@@ -317,7 +317,7 @@
     "position": [
       40.464766,
       -121.433435
-    ]
+    ], "image": "public/images/lassenvolcanic.png"
   },
   {
     "name": "Mammoth Cave",
@@ -325,7 +325,7 @@
     "position": [
       37.188575,
       -86.140755
-    ]
+    ], "image": "public/images/mammothcave.png"
   },
   {
     "name": "Mesa Verde",
@@ -333,7 +333,7 @@
     "position": [
       37.253474,
       -108.447174
-    ]
+    ], "image": "public/images/mesaverde.png"
   },
   {
     "name": "Mount Rainier",
@@ -341,7 +341,7 @@
     "position": [
       46.906031,
       -121.786218
-    ]
+    ], "image": "public/images/mountrainier.png"
   },
   {
     "name": "National Park of American Samoa",
@@ -349,7 +349,7 @@
     "position": [
       -14.225602,
       -170.072331
-    ]
+    ], "image": "public/images/american_samoa.png"
   },
   {
     "name": "New River Gorge",
@@ -357,7 +357,7 @@
     "position": [
       37.8651,
       -81.0186
-    ]
+    ], "image": "public/images/newrivergorge.png"
   },
   {
     "name": "North Cascades",
@@ -365,7 +365,7 @@
     "position": [
       48.685186,
       -121.136102
-    ]
+    ], "image": "public/images/northcascades.png"
   },
   {
     "name": "Olympic",
@@ -373,7 +373,7 @@
     "position": [
       47.926301,
       -123.94598
-    ]
+    ], "image": "public/images/olympic.png"
   },
   {
     "name": "Petrified Forest",
@@ -381,7 +381,7 @@
     "position": [
       34.974643,
       -109.772657
-    ]
+    ], "image": "public/images/petrifiedforest.png"
   },
   {
     "name": "Pinnacles",
@@ -389,7 +389,7 @@
     "position": [
       36.486284,
       -121.173379
-    ]
+    ], "image": "public/images/pinnacles.png"
   },
   {
     "name": "Redwood",
@@ -397,7 +397,7 @@
     "position": [
       41.460686,
       -124.004459
-    ]
+    ], "image": "public/images/redwood.png" 
   },
   {
     "name": "Rocky Mountain",
@@ -405,7 +405,7 @@
     "position": [
       40.355934,
       -105.703659
-    ]
+    ], "image": "public/images/rockymountain.png"
   },
   {
     "name": "Saguaro",
@@ -413,7 +413,7 @@
     "position": [
       32.228049,
       -110.871175
-    ]
+    ], "image": "public/images/saguaro.png"
   },
   {
     "name": "Sequoia",
@@ -421,7 +421,7 @@
     "position": [
       36.496098,
       -118.577185
-    ]
+    ], "image": "public/images/sequoia.png"
   },
   {
     "name": "Shenandoah",
@@ -429,7 +429,7 @@
     "position": [
       38.471926,
       -78.50474
-    ]
+    ], "image": "public/images/shenandoah.png"
   },
   {
     "name": "Theodore Roosevelt",
@@ -437,7 +437,7 @@
     "position": [
       47.259952,
       -103.436874
-    ]
+    ], "image": "public/images/theodoreroosevelt.png"   
   },
   {
     "name": "Virgin Islands",
@@ -445,7 +445,7 @@
     "position": [
       18.336902,
       -64.808812
-    ]
+    ], "image": "public/images/virginislands.png"
   },
   {
     "name": "Voyageurs",
@@ -453,7 +453,7 @@
     "position": [
       48.465411,
       -92.828796
-    ]
+    ], "image": "public/images/voyageurs.png"
   },
   {
     "name": "White Sands",
@@ -461,7 +461,7 @@
     "position": [
       32.764701,
       -106.309873
-    ]
+    ], "image": "public/images/whitesands.png"
   },
   {
     "name": "Wind Cave",
@@ -469,7 +469,7 @@
     "position": [
       43.568849,
       -103.443732
-    ]
+    ], "image": "public/images/windcave.png"
   },
   {
     "name": "Wrangell - St Elias",
@@ -477,7 +477,7 @@
     "position": [
       61.18059,
       -142.132011
-    ]
+    ], "image": "public/images/wrangell_st_elias.png"
   },
   {
     "name": "Yellowstone",
@@ -485,7 +485,7 @@
     "position": [
       44.620714,
       -110.490063
-    ]
+    ], "image": "public/images/yellowstone.png"   
   },
   {
     "name": "Yosemite",
@@ -493,7 +493,7 @@
     "position": [
       37.839349,
       -119.542841
-    ]
+    ], "image": "public/images/yosemite.png"
   },
   {
     "name": "Zion",
@@ -501,6 +501,6 @@
     "position": [
       37.322823,
       -113.045728
-    ]
+    ], "image": "public/images/zion.png"
   }
 ]
