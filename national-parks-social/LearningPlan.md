@@ -31,7 +31,7 @@ I have about 5 to 7 hours per week available to work on this frontend.
 
 ### Weekly Goal
 
-Strengthen my understanding of React components, props, state, and project structure so I can confidently organize the National Parks Social frontend.
+Learn how to build forms, manage user input, and create multiple frontend views for the national parks social media app.
 
 ### Recommended Resources
 
@@ -60,7 +60,7 @@ Strengthen my understanding of React components, props, state, and project struc
 
 ### Weekly Goal
 
-Learn how to build forms, manage user input, and create multiple frontend views for the national parks social media app.
+Strengthen my understanding of React components, props, state, and project structure so I can confidently organize the National Parks Social frontend.
 
 ### Recommended Resources
 
