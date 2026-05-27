@@ -26,7 +26,7 @@ export default function Navbar() {
         </NavLink>
       </div>
 
-      <div className="flex w-48 justify-end text-sm font-medium">
+      <div className="flex w-64 justify-end gap-6 text-sm font-medium">
         <NavLink to="/profile" className={navLinkClass}>
           Profile
         </NavLink>
