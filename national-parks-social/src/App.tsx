@@ -6,6 +6,8 @@ import Maps from "./pages/maps/Maps";
 import Profile from "./pages/profile/Profile";
 import Saved from "./pages/saved/Saved";
 import Plan from "./pages/plan/Plan";
+import Login from "./pages/login/Login";  
+import Register from "./pages/register/Register";
 
 export default function App() {
   return (
@@ -18,6 +20,8 @@ export default function App() {
           <Route path="feed" element={<Feed />} />
           <Route path="plan" element={<Plan />} />
           <Route path="saved" element={<Saved />} />
+          <Route path="login" element={<Login />} />
+          <Route path="register" element={<Register />} />
           <Route path="profile" element={<Profile />} />
         </Routes>
       </AppLayout>
