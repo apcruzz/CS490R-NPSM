@@ -30,6 +30,12 @@ export default function Navbar() {
         <NavLink to="/profile" className={navLinkClass}>
           Profile
         </NavLink>
+        <NavLink to="/login" className={navLinkClass}>
+          Login
+        </NavLink>
+        <NavLink to="/register" className={navLinkClass}>
+          Register
+        </NavLink>
       </div>
     </nav>
   );
