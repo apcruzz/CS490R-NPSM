@@ -26,6 +26,10 @@ function getParkDescription(park: Park, category: string) {
   return `${park.name} is a ${category.toLowerCase()} national park in ${park.state}.`;
 }
 
+function createParkSlug(name: string) {
+  return name.toLowerCase().replaceAll(" ", "-");
+}
+
 // function getParkImageUrl(park: Park) {
 //   const imageQuery = encodeURIComponent(`${park.name} national park landscape`);
 
@@ -79,9 +83,11 @@ export default function Explore() {
             const category = getParkCategory(park);
 
             return (
-              <button
+              <a
                 key={park.name}
-                type="button"
+                href={`/parks/${createParkSlug(park.name)}`}
+                target="_blank"
+                rel="noreferrer"
                 className="overflow-hidden rounded-md border border-zinc-200 bg-white text-left transition hover:border-emerald-700 hover:shadow-sm"
               >
                 {/* <img
@@ -110,7 +116,7 @@ export default function Explore() {
                     </p>
                   </div>
                 </div>
-              </button>
+              </a>
             );
           })}
         </div>

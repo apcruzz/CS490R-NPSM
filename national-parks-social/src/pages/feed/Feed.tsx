@@ -109,7 +109,7 @@ function PostImages({
         type="button"
         onClick={showPreviousImage}
         aria-label="Previous photo"
-        className="absolute left-3 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-black/55 text-lg font-semibold text-white hover:bg-black/70"
+        className="absolute left-3 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center text-2xl font-semibold text-white"
       >
         {"<"}
       </button>
@@ -118,7 +118,7 @@ function PostImages({
         type="button"
         onClick={showNextImage}
         aria-label="Next photo"
-        className="absolute right-3 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-black/55 text-lg font-semibold text-white hover:bg-black/70"
+        className="absolute right-3 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center text-2xl font-semibold text-white"
       >
         {">"}
       </button>
