@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { nationalParks } from "../../lib/parks";
+import { Link } from "react-router";
 
 const yosemite = nationalParks.find((park) => park.name === "Yosemite");
 const zion = nationalParks.find((park) => park.name === "Zion");
@@ -10,6 +11,10 @@ const bryce = nationalParks.find((park) => park.name === "Bryce Canyon");
 
 function hasImage(image: string | undefined): image is string {
   return Boolean(image);
+}
+
+function createParkSlug(name: string) {
+  return name.toLowerCase().replaceAll(" ", "-");
 }
 
 const feedPosts = [
@@ -186,7 +191,13 @@ export default function Feed() {
                   </div>
 
                   <p className="text-xs text-zinc-500">
-                    {post.username} visited {post.park}, {post.state}
+                    {post.username} visited{" "}
+                    <Link
+                      to={`/parks/${createParkSlug(post.park)}`}
+                      className="font-medium text-emerald-700 hover:underline"
+                    >
+                      {post.park}, {post.state}
+                    </Link>
                   </p>
                 </div>
               </div>
