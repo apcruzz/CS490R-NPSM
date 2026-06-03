@@ -7,4 +7,11 @@ export type Park = {
   image: string;
 };
 
-export const nationalParks = nationalParksData as Park[];
+function normalizeImagePath(image: string) {
+  return image.startsWith("public/") ? `/${image.replace("public/", "")}` : image;
+}
+
+export const nationalParks = (nationalParksData as Park[]).map((park) => ({
+  ...park,
+  image: normalizeImagePath(park.image),
+}));

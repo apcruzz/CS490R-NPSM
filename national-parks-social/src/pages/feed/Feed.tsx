@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { nationalParks } from "../../lib/parks";
 
 const yosemite = nationalParks.find((park) => park.name === "Yosemite");
@@ -5,7 +6,7 @@ const zion = nationalParks.find((park) => park.name === "Zion");
 const acadia = nationalParks.find((park) => park.name === "Acadia");
 const grandCanyon = nationalParks.find((park) => park.name === "Grand Canyon");
 const arches = nationalParks.find((park) => park.name === "Arches");
-const olympic = nationalParks.find((park) => park.name === "Olympic");
+const bryce = nationalParks.find((park) => park.name === "Bryce Canyon");
 
 function hasImage(image: string | undefined): image is string {
   return Boolean(image);
@@ -32,7 +33,7 @@ const feedPosts = [
     avatar: "J",
     park: zion?.name ?? "Zion",
     state: zion?.state ?? "UT",
-    images: [zion?.image, arches?.image, olympic?.image].filter(hasImage),
+    images: [zion?.image, arches?.image, bryce?.image].filter(hasImage),
     body: "First time hiking in Zion. The canyon views made this one of my favorite park visits so far.",
     likes: 31,
     comments: 4,
@@ -60,6 +61,8 @@ function PostImages({
   images: string[];
   park: string;
 }) {
+  const [activeIndex, setActiveIndex] = useState(0);
+
   if (images.length === 0) {
     return null;
   }
@@ -74,16 +77,65 @@ function PostImages({
     );
   }
 
+  function showPreviousImage() {
+    setActiveIndex((currentIndex) =>
+      currentIndex === 0 ? images.length - 1 : currentIndex - 1
+    );
+  }
+
+  function showNextImage() {
+    setActiveIndex((currentIndex) =>
+      currentIndex === images.length - 1 ? 0 : currentIndex + 1
+    );
+  }
+
   return (
-    <div className="grid grid-cols-2 gap-1 bg-zinc-100">
-      {images.map((image, index) => (
-        <img
-          key={`${image}-${index}`}
-          src={image}
-          alt={`${park} National Park photo ${index + 1}`}
-          className="aspect-square w-full object-cover"
-        />
-      ))}
+    <div className="relative overflow-hidden bg-zinc-100">
+      <div
+        className="flex transition-transform duration-300 ease-out"
+        style={{ transform: `translateX(-${activeIndex * 100}%)` }}
+      >
+        {images.map((image, index) => (
+          <img
+            key={`${image}-${index}`}
+            src={image}
+            alt={`${park} National Park photo ${index + 1}`}
+            className="aspect-[4/3] w-full flex-none object-cover"
+          />
+        ))}
+      </div>
+
+      <button
+        type="button"
+        onClick={showPreviousImage}
+        aria-label="Previous photo"
+        className="absolute left-3 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-black/55 text-lg font-semibold text-white hover:bg-black/70"
+      >
+        {"<"}
+      </button>
+
+      <button
+        type="button"
+        onClick={showNextImage}
+        aria-label="Next photo"
+        className="absolute right-3 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-black/55 text-lg font-semibold text-white hover:bg-black/70"
+      >
+        {">"}
+      </button>
+
+      <div className="absolute bottom-3 left-1/2 flex -translate-x-1/2 gap-1.5 rounded-full bg-black/35 px-2 py-1">
+        {images.map((image, index) => (
+          <button
+            key={`${image}-dot`}
+            type="button"
+            onClick={() => setActiveIndex(index)}
+            aria-label={`Show photo ${index + 1}`}
+            className={`h-2 w-2 rounded-full ${
+              index === activeIndex ? "bg-white" : "bg-white/45"
+            }`}
+          />
+        ))}
+      </div>
     </div>
   );
 }
