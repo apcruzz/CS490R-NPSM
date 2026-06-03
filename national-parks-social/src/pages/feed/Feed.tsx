@@ -3,6 +3,13 @@ import { nationalParks } from "../../lib/parks";
 const yosemite = nationalParks.find((park) => park.name === "Yosemite");
 const zion = nationalParks.find((park) => park.name === "Zion");
 const acadia = nationalParks.find((park) => park.name === "Acadia");
+const grandCanyon = nationalParks.find((park) => park.name === "Grand Canyon");
+const arches = nationalParks.find((park) => park.name === "Arches");
+const olympic = nationalParks.find((park) => park.name === "Olympic");
+
+function hasImage(image: string | undefined): image is string {
+  return Boolean(image);
+}
 
 const feedPosts = [
   {
@@ -12,7 +19,7 @@ const feedPosts = [
     avatar: "M",
     park: yosemite?.name ?? "Yosemite",
     state: yosemite?.state ?? "CA",
-    image: yosemite?.image ?? "",
+    images: [yosemite?.image, grandCanyon?.image].filter(hasImage),
     body: "Caught the sunset in Yosemite Valley. The view was incredible and I would definitely come back.",
     likes: 42,
     comments: 8,
@@ -25,7 +32,7 @@ const feedPosts = [
     avatar: "J",
     park: zion?.name ?? "Zion",
     state: zion?.state ?? "UT",
-    image: zion?.image ?? "",
+    images: [zion?.image, arches?.image, olympic?.image].filter(hasImage),
     body: "First time hiking in Zion. The canyon views made this one of my favorite park visits so far.",
     likes: 31,
     comments: 4,
@@ -38,13 +45,48 @@ const feedPosts = [
     avatar: "S",
     park: acadia?.name ?? "Acadia",
     state: acadia?.state ?? "ME",
-    image: acadia?.image ?? "",
+    images: [acadia?.image].filter(hasImage),
     body: "Morning walk near the coast at Acadia. The ocean views and trails were peaceful.",
     likes: 27,
     comments: 6,
     timeAgo: "1d ago",
   },
 ];
+
+function PostImages({
+  images,
+  park,
+}: {
+  images: string[];
+  park: string;
+}) {
+  if (images.length === 0) {
+    return null;
+  }
+
+  if (images.length === 1) {
+    return (
+      <img
+        src={images[0]}
+        alt={`${park} National Park`}
+        className="aspect-[4/3] w-full object-cover"
+      />
+    );
+  }
+
+  return (
+    <div className="grid grid-cols-2 gap-1 bg-zinc-100">
+      {images.map((image, index) => (
+        <img
+          key={`${image}-${index}`}
+          src={image}
+          alt={`${park} National Park photo ${index + 1}`}
+          className="aspect-square w-full object-cover"
+        />
+      ))}
+    </div>
+  );
+}
 
 export default function Feed() {
   return (
@@ -97,13 +139,7 @@ export default function Feed() {
                 </div>
               </div>
 
-              {post.image && (
-                <img
-                  src={post.image}
-                  alt={`${post.park} National Park`}
-                  className="aspect-[4/3] w-full object-cover"
-                />
-              )}
+              <PostImages images={post.images} park={post.park} />
 
               <div className="space-y-3 p-4">
                 <p className="text-sm leading-6 text-zinc-700">{post.body}</p>
