@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
+import { useAuth } from "../../context/AuthContext";
 import { apiRequest } from "../../lib/api";
-import { storeAuthToken } from "../../lib/auth";
 
 type LoginResponse = {
   token?: string;
@@ -10,6 +10,7 @@ type LoginResponse = {
 
 export default function Login() {
   const navigate = useNavigate();
+  const { login } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -45,7 +46,7 @@ export default function Login() {
         throw new Error("The API did not return an authentication token.");
       }
 
-      storeAuthToken(token);
+      login(token);
       navigate("/profile");
     } catch (loginError) {
       setError(
