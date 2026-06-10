@@ -16,6 +16,20 @@ Run the development server:
 npm run dev
 ```
 
+## API Configuration
+
+Copy `.env.example` to `.env` and set the URL for the REST API:
+
+```text
+VITE_API_BASE_URL=http://localhost:3000
+```
+
+The Login page sends a `POST` request to `/login`. A successful response should
+return either a `token` or `access_token` field containing the JWT.
+
+See `docs/week-4-screencast.md` for the authentication flow, architecture
+summary, and screencast checklist.
+
 Open the local URL printed by Vite.
 
 ## Production
