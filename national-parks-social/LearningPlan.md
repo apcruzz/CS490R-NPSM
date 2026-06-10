@@ -93,6 +93,16 @@ Strengthen my understanding of React components, props, state, and project struc
 
 Connect the frontend to the REST API, support user login, and make authenticated requests using the returned authentication token.
 
+### Progress Update - June 9, 2026
+
+- Added a reusable API request helper with response and error handling.
+- Connected the Login form to a configurable `POST /login` endpoint.
+- Added JWT storage and automatic Bearer authorization headers.
+- Added shared authentication state, logout, and a protected Profile route.
+- The frontend build and lint checks pass.
+- The next step is to test the complete flow against the real REST API and
+  confirm its endpoint, request fields, and token response format.
+
 ### Recommended Resources
 
 - MDN Fetch API guide: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
