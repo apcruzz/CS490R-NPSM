@@ -1,11 +1,21 @@
 import { useState } from "react";
+import { useNavigate } from "react-router";
+import { apiRequest } from "../../lib/api";
+import { storeAuthToken } from "../../lib/auth";
+
+type LoginResponse = {
+  token?: string;
+  access_token?: string;
+};
 
 export default function Login() {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
     if (!email.trim()) {
@@ -19,13 +29,33 @@ export default function Login() {
     }
 
     setError("");
+    setIsSubmitting(true);
 
-    const formData = {
-      email,
-      password,
-    };
+    try {
+      const response = await apiRequest<LoginResponse>("/login", {
+        method: "POST",
+        body: JSON.stringify({
+          email: email.trim(),
+          password,
+        }),
+      });
+      const token = response.token ?? response.access_token;
 
-    console.log("Login form submitted:", formData);
+      if (!token) {
+        throw new Error("The API did not return an authentication token.");
+      }
+
+      storeAuthToken(token);
+      navigate("/profile");
+    } catch (loginError) {
+      setError(
+        loginError instanceof Error
+          ? loginError.message
+          : "Unable to log in. Please try again."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -44,8 +74,10 @@ export default function Login() {
             <input
               id="email"
               type="email"
+              autoComplete="email"
               value={email}
               onChange={(event) => setEmail(event.target.value)}
+              disabled={isSubmitting}
               className="mt-1 w-full rounded-md border border-zinc-300 px-3 py-2 text-sm outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/15"
             />
           </div>
@@ -57,8 +89,10 @@ export default function Login() {
             <input
               id="password"
               type="password"
+              autoComplete="current-password"
               value={password}
               onChange={(event) => setPassword(event.target.value)}
+              disabled={isSubmitting}
               className="mt-1 w-full rounded-md border border-zinc-300 px-3 py-2 text-sm outline-none focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/15"
             />
           </div>
@@ -71,9 +105,10 @@ export default function Login() {
 
           <button
             type="submit"
-            className="w-full rounded-md bg-emerald-700 px-4 py-2 text-sm font-medium text-white hover:bg-emerald-800"
+            disabled={isSubmitting}
+            className="w-full rounded-md bg-emerald-700 px-4 py-2 text-sm font-medium text-white hover:bg-emerald-800 disabled:cursor-not-allowed disabled:opacity-60"
           >
-            Login
+            {isSubmitting ? "Logging in..." : "Login"}
           </button>
         </form>
       </section>
