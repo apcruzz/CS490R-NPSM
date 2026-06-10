@@ -1,4 +1,5 @@
 import { useMemo, useState, type FormEvent } from "react";
+import TripAssistant from "../../components/TripAssistant";
 import { nationalParks } from "../../lib/parks";
 
 const interests = [
@@ -271,72 +272,84 @@ export default function Plan() {
           </button>
         </form>
 
-        <aside className="self-start rounded-md border border-zinc-200 bg-white p-5 lg:sticky lg:top-20">
-          <h3 className="font-semibold">Trip outline</h3>
+        <aside className="space-y-6 self-start lg:sticky lg:top-20">
+          <section className="rounded-md border border-zinc-200 bg-white p-5">
+            <h3 className="font-semibold">Trip outline</h3>
 
-          {!tripPlan ? (
-            <p className="mt-3 text-sm leading-6 text-zinc-500">
-              Complete the trip form to create a summary you can refine.
-            </p>
-          ) : (
-            <div className="mt-4 space-y-5">
-              <div>
-                <p className="text-lg font-semibold">{tripPlan.parkName}</p>
-                <p className="text-sm text-zinc-500">{tripPlan.state}</p>
-              </div>
-
-              <dl className="space-y-3 text-sm">
-                <div className="flex justify-between gap-4 border-b border-zinc-100 pb-3">
-                  <dt className="text-zinc-500">Dates</dt>
-                  <dd className="text-right font-medium">
-                    {formatDate(tripPlan.startDate)} to{" "}
-                    {formatDate(tripPlan.endDate)}
-                  </dd>
-                </div>
-                <div className="flex justify-between gap-4 border-b border-zinc-100 pb-3">
-                  <dt className="text-zinc-500">Travelers</dt>
-                  <dd className="font-medium">{tripPlan.travelers}</dd>
-                </div>
-                <div className="flex justify-between gap-4 border-b border-zinc-100 pb-3">
-                  <dt className="text-zinc-500">Pace</dt>
-                  <dd className="font-medium">{tripPlan.pace}</dd>
-                </div>
-                <div className="flex justify-between gap-4">
-                  <dt className="text-zinc-500">Lodging</dt>
-                  <dd className="text-right font-medium">{tripPlan.lodging}</dd>
-                </div>
-              </dl>
-
-              <div>
-                <p className="text-sm font-medium">Priorities</p>
-                <div className="mt-2 flex flex-wrap gap-2">
-                  {tripPlan.interests.length > 0 ? (
-                    tripPlan.interests.map((interest) => (
-                      <span
-                        key={interest}
-                        className="rounded bg-emerald-50 px-2 py-1 text-xs font-medium text-emerald-800"
-                      >
-                        {interest}
-                      </span>
-                    ))
-                  ) : (
-                    <span className="text-sm text-zinc-500">
-                      No interests selected
-                    </span>
-                  )}
-                </div>
-              </div>
-
-              {tripPlan.notes && (
+            {!tripPlan ? (
+              <p className="mt-3 text-sm leading-6 text-zinc-500">
+                Complete the trip form to create a summary you can refine.
+              </p>
+            ) : (
+              <div className="mt-4 space-y-5">
                 <div>
-                  <p className="text-sm font-medium">Notes</p>
-                  <p className="mt-2 text-sm leading-6 text-zinc-600">
-                    {tripPlan.notes}
-                  </p>
+                  <p className="text-lg font-semibold">{tripPlan.parkName}</p>
+                  <p className="text-sm text-zinc-500">{tripPlan.state}</p>
                 </div>
-              )}
-            </div>
-          )}
+
+                <dl className="space-y-3 text-sm">
+                  <div className="flex justify-between gap-4 border-b border-zinc-100 pb-3">
+                    <dt className="text-zinc-500">Dates</dt>
+                    <dd className="text-right font-medium">
+                      {formatDate(tripPlan.startDate)} to{" "}
+                      {formatDate(tripPlan.endDate)}
+                    </dd>
+                  </div>
+                  <div className="flex justify-between gap-4 border-b border-zinc-100 pb-3">
+                    <dt className="text-zinc-500">Travelers</dt>
+                    <dd className="font-medium">{tripPlan.travelers}</dd>
+                  </div>
+                  <div className="flex justify-between gap-4 border-b border-zinc-100 pb-3">
+                    <dt className="text-zinc-500">Pace</dt>
+                    <dd className="font-medium">{tripPlan.pace}</dd>
+                  </div>
+                  <div className="flex justify-between gap-4">
+                    <dt className="text-zinc-500">Lodging</dt>
+                    <dd className="text-right font-medium">
+                      {tripPlan.lodging}
+                    </dd>
+                  </div>
+                </dl>
+
+                <div>
+                  <p className="text-sm font-medium">Priorities</p>
+                  <div className="mt-2 flex flex-wrap gap-2">
+                    {tripPlan.interests.length > 0 ? (
+                      tripPlan.interests.map((interest) => (
+                        <span
+                          key={interest}
+                          className="rounded bg-emerald-50 px-2 py-1 text-xs font-medium text-emerald-800"
+                        >
+                          {interest}
+                        </span>
+                      ))
+                    ) : (
+                      <span className="text-sm text-zinc-500">
+                        No interests selected
+                      </span>
+                    )}
+                  </div>
+                </div>
+
+                {tripPlan.notes && (
+                  <div>
+                    <p className="text-sm font-medium">Notes</p>
+                    <p className="mt-2 text-sm leading-6 text-zinc-600">
+                      {tripPlan.notes}
+                    </p>
+                  </div>
+                )}
+              </div>
+            )}
+          </section>
+
+          <TripAssistant
+            parkName={parkName}
+            startDate={startDate}
+            endDate={endDate}
+            pace={pace}
+            interests={selectedInterests}
+          />
         </aside>
       </div>
     </main>
